@@ -51,13 +51,15 @@ module.exports = {
                             /*** if(visitor.gender != user.gender || visitor.username != user.username){ ***/
                             if(visitor.gender != user.gender){
                                 client.sadd('hc:room:'+rooms[ctrin]+':visitor',JSON.stringify(user));
-                                fn(null,rooms[ctrin]);
+                                fn(null,rooms[ctrin]); return;
                             }
                             else{
                             	/*** added this part to add new room by me ***/
+                            	addroom = rooms.length + 1;
                             	console.log("---added new room due to different gender---");
-                            	client.sadd("hc:rooms",rooms.length+1);
-                            	fn(null,rooms);
+                            	client.sadd("hc:rooms",addroom);
+                            	client.sadd('hc:room:'+addroom+':visitor',JSON.stringify(user));
+                            	fn(null,addroom); return;
                             }
                         }
                         else{
