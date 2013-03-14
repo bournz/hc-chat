@@ -8,7 +8,7 @@
     "facebook": {
       "clientid" : "329613163813777",
       "clientsecret" : "05fd646b7ba719c7a64a6f2608d4fc86",
-      "callback" : "http://192.168.42.173:3000/authfb/callback"
+      "callback" : "http://192.168.1.100:3000/authfb/callback"
     }
   }
 }

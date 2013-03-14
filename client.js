@@ -49,17 +49,20 @@ module.exports = {
                             console.log("visitor gender: " + visitor.gender + " name: " + visitor.codename);
                             console.log("user gender: " + user.gender + " name: " + user.codename);
                             /*** if(visitor.gender != user.gender || visitor.username != user.username){ ***/
-                            if(visitor.gender != user.gender){
+                            if(visitor.gender != user.gender && visitor.username != user.username){
+                            	console.log("rooms[ctrin]: " + rooms[ctrin]);
                                 client.sadd('hc:room:'+rooms[ctrin]+':visitor',JSON.stringify(user));
+                                ctr = rooms.length;
                                 fn(null,rooms[ctrin]); return;
                             }
                             else{
                             	/*** added this part to add new room by me ***/
                             	addroom = rooms.length + 1;
+                            	console.log("addroom: " + addroom);
                             	console.log("---added new room due to different gender---");
                             	client.sadd("hc:rooms",addroom);
                             	client.sadd('hc:room:'+addroom+':visitor',JSON.stringify(user));
-                            	fn(null,addroom); return;
+                            	fn(null,addroom); return; 
                             }
                         }
                         else{
