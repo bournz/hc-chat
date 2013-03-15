@@ -423,3 +423,28 @@ footer {
 	 line-height: 0;
 	 text-decoration: none;
 }
+
+.ranking-container .ranking-selection-box .rate_widget .ratings_chick{
+	background: url('/img/hc-theme/chick-hide.png') no-repeat;
+    float:      left;
+    height:     29px;
+    padding:    2px;
+    width:      29px;
+}
+
+.ranking-container .ranking-selection-box .rate_widget {  
+    border:     1px solid #CCC;
+    overflow:   visible;
+    padding:    10px;
+    position:   relative;
+    width:      180px;
+    height:     32px;
+}
+
+.ranking-container .ranking-selection-box .rate_widget .ratings_vote {  
+    background: url('/img/hc-theme/chick-show.png') no-repeat;  
+}
+
+.ranking-container .ranking-selection-box .rate_widget .ratings_over {  
+    background: url('/img/hc-theme/chick-show.png') no-repeat;  
+}

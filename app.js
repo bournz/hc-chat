@@ -12,15 +12,17 @@ var express = require('express')
   , RedisStore = require("connect-redis")(express);
 
 
+//var rtg   = require('url').parse("redis://redistogo:7d72377b441a5b63c01321ba29df3079@dory.redistogo.com:10326/");
 var rtg   = require('url').parse("redis://redistogo:7d72377b441a5b63c01321ba29df3079@dory.redistogo.com:10326/");
 console.log(rtg);
-var client = exports.client  = redis.createClient(rtg.port,rtg.hostname);
-client.auth(rtg.auth.split(':')[1]); 
-var pub = exports.pub  = redis.createClient(rtg.port,rtg.hostname);
-pub.auth(rtg.auth.split(':')[1]); 
-var sub = exports.sub  = redis.createClient(rtg.port,rtg.hostname);
-sub.auth(rtg.auth.split(':')[1]); 
-var sessionStore = exports.sessionStore = new RedisStore({client: client});
+//var client = exports.client  = redis.createClient(rtg.port,rtg.hostname);
+var client = exports.client  = redis.createClient();
+//client.auth(rtg.auth.split(':')[1]); 
+var pub = exports.pub  = redis.createClient();
+//pub.auth(rtg.auth.split(':')[1]); 
+var sub = exports.sub  = redis.createClient();
+//sub.auth(rtg.auth.split(':')[1]); 
+var sessionStore = exports.sessionStore = new RedisStore({});
 
 require('./strategy');
 
