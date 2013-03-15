@@ -8,3 +8,20 @@ block content
 				h2 Hi
 		.ranking-container
 			.ranking-selection-box
+				form
+					button#score.good(type='button')
+						input(type='checkbox', id='g-score', name='g-score', value='good', hidden='true')
+				
+		include footer
+		script
+			$('#score').click(function(ev) {
+				$('#score').not(this).css('background-position', '-128px 0').removeClass('s');
+				if(!$(this).is('.s')){
+					$(this).css('background-position', '1px 0').addClass('s');
+					$('#g-score').attr("checked", true);
+				}
+				else{
+					$('#g-score').attr("checked", false);
+					$(this).css('background-position', '-30px 0').removeClass('s');
+				}
+			});

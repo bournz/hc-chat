@@ -264,9 +264,23 @@ body.ranking-page {
 }
 
 .ranking-container .ranking-selection-box {
-	background: url("/img/hc-theme/score-sheet.png") no-repeat scroll 51.5% 35px transparent;
+	background: url("/img/hc-theme/score-sheet.png") no-repeat scroll 51.5% -7px transparent;
 	background-size: -moz-calc();
-	height: 400px;	
+	height: 500px;	
+}
+
+.ranking-container .ranking-selection-box .good{
+		border: 0px solid #000000;
+		background-attachment: inherit;
+    background-clip: inherit;
+    background-color: transparent;
+    background-image: url("/img/hc-theme/g-score.png");
+    background-origin: padding-box;
+    background-position: 1px 0;
+    background-repeat: no-repeat;
+    height: 10%;
+    width: 2.5%;
+   margin: 110px 0 0 34%;
 }
 
 .gender-container {
